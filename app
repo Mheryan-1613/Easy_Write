@@ -3,14 +3,11 @@ from tkinter import *
 from tkinter import filedialog
 
 def save_info():
-    #first_name_info = firstname.get()
 	my_text_info = mytext.get("1.0",END)  
 	
-	file = filedialog.askopenfilename(initialdir="/home/robotics", title="Submit text", filetypes=(("text files", "*.txt"), ))
-	file = open(file, "a")
-	#file.write("Your Title : " + first_name_info)
+	file = filedialog.askopenfilename(initialdir="/home/robotics", title="Submit text", filetypes=(("text files", "*.*"), ))
+	file = open(file, "w")
 	file.write(my_text_info)
-	file.write("\n")
 	file.close()
 
 
@@ -37,14 +34,6 @@ app.resizable(False, False)
 heading = Label(text="Quick Notes", bg="orange", fg="black",font="Helvetica 14 bold", width="500", height="3")
 
 heading.pack()
-
-#firstname_text = Label(text="Title", font="Helvetica 12 bold")
-#firstname_text.place(x=15, y=70)
-
-#firstname = StringVar()
-
-#first_name_entry = Entry(textvariable=firstname, width="30")
-#first_name_entry.place(x=15, y=100)
 
 mytext = Text(app, width=60, height=20)
 mytext.place(x=15, y=130)
