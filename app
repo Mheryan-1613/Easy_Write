@@ -2,6 +2,7 @@
 from tkinter import * 
 from tkinter import filedialog
 
+print("Quick Notes(1.0)...")
 def save_info():
 	my_text_info = mytext.get("1.0",END)  
 	
