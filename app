@@ -32,7 +32,7 @@ app.title("EasyWrite(1.0)")
 app.resizable(False, False)
 
 
-heading = Label(text="EasyWrite", bg="orange", fg="black",font="Helvetica 14 bold", width="500", height="3")
+heading = Label(text="Easy Write", bg="orange", fg="white",font="Fixedsys 14 bold", width="500", height="3")
 
 heading.pack()
 
@@ -41,13 +41,13 @@ mytext.place(x=15, y=130)
 #my_text.pack()
 
 button = Button(app,text="Submit",font="Helvetica 12 ",command=save_info,width=7,height=2)
-button.place(x=407,y=70)
+button.place(x=407,y=78)
 
 open_note = Button(app,text="Open",width=2,height=2, command=open_info)
-open_note.place(x=66,y=70)
+open_note.place(x=66,y=78)
 
 add_note = Button(app,text="Add",width=2,height=2, command=add_info)
-add_note.place(x=16,y=70)
+add_note.place(x=16,y=78)
 
-print("EasyWrite(1.0)...")
+print("Easy Write(1.0)...")
 mainloop()
