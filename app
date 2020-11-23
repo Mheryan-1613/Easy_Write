@@ -2,7 +2,7 @@
 from tkinter import * 
 from tkinter import filedialog
 
-print("Quick Notes(1.0)...")
+
 def save_info():
 	my_text_info = mytext.get("1.0",END)  
 	
@@ -28,11 +28,11 @@ def add_info():
 app = Tk()
 
 app.geometry("520x500")
-app.title("Quick Notes(1.0)")
+app.title("EasyWrite(1.0)")
 app.resizable(False, False)
 
 
-heading = Label(text="Quick Notes", bg="orange", fg="black",font="Helvetica 14 bold", width="500", height="3")
+heading = Label(text="EasyWrite", bg="orange", fg="black",font="Helvetica 14 bold", width="500", height="3")
 
 heading.pack()
 
@@ -49,4 +49,5 @@ open_note.place(x=66,y=70)
 add_note = Button(app,text="Add",width=2,height=2, command=add_info)
 add_note.place(x=16,y=70)
 
+print("EasyWrite(1.0)...")
 mainloop()
