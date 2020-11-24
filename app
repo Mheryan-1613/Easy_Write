@@ -14,6 +14,7 @@ def save_info():
 
 def open_info():
 	text_file = filedialog.askopenfilename(initialdir="/home/robotics", title="Open text file", filetypes=(("Text Files", "*.*"), ))
+        #mytext.delete(0, "end")
 	text_file = open(text_file, "r")
 	stuff = text_file.read()
 	mytext.insert(END, stuff)
@@ -40,7 +41,7 @@ mytext = Text(app, width=60, height=20)
 mytext.place(x=15, y=130)
 #my_text.pack()
 
-button = Button(app,text="Submit",font="Helvetica 12 ",command=save_info,width=7,height=2)
+button = Button(app,text="Submit",font="Fixedsys 10 ",command=save_info,width=6,height=2)
 button.place(x=407,y=78)
 
 open_note = Button(app,text="Open",width=2,height=2, command=open_info)
