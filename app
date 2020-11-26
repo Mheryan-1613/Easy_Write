@@ -14,7 +14,6 @@ def save_info():
 
 def open_info():
 	text_file = filedialog.askopenfilename(initialdir="/home/robotics", title="Open text file", filetypes=(("Text Files", "*.*"), ))
-        #mytext.delete(0, "end")
 	text_file = open(text_file, "r")
 	stuff = text_file.read()
 	mytext.insert(END, stuff)
@@ -25,6 +24,8 @@ def add_info():
 	add_file = open(add_file, "a")
 	add_file.close()
 
+def del_data():
+    mytext.delete(1.0, "end")
 
 app = Tk()
 
@@ -50,5 +51,6 @@ open_note.place(x=66,y=78)
 add_note = Button(app,text="Add",width=2,height=2, command=add_info)
 add_note.place(x=16,y=78)
 
-print("Easy Write(1.0)...")
+print("Easy Write(1.1)")
+print("Developing mode ..."
 mainloop()
