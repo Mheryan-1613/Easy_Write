@@ -17,6 +17,7 @@ def open_info():
 	text_file = open(text_file, "r")
 	stuff = text_file.read()
 	mytext.insert(END, stuff)
+    mytext.delete("1.0", "END")
 	text_file.close()
 	
 def add_info():
@@ -50,5 +51,5 @@ add_note.place(x=16,y=78)
 
 print("Easy Write(1.1)")
 print("Developing mode ...")
-
+print("Hayko")
 mainloop()
