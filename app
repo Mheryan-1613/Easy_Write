@@ -24,9 +24,6 @@ def add_info():
 	add_file = open(add_file, "a")
 	add_file.close()
 
-def del_data():
-    mytext.delete(1.0, "end")
-
 app = Tk()
 
 app.geometry("520x500")
@@ -52,5 +49,6 @@ add_note = Button(app,text="Add",width=2,height=2, command=add_info)
 add_note.place(x=16,y=78)
 
 print("Easy Write(1.1)")
-print("Developing mode ..."
+print("Developing mode ...")
+
 mainloop()
