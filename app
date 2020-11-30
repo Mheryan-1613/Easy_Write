@@ -13,8 +13,8 @@ from tkinter import filedialog
 def save():
     mytext_info = mytext.get("1.0", END)
     open_info()
-    text = open(text, "a")
-    mytext.insert(END, stuff)
+    open_text = open("data", "a")
+    mytext.insert(END, data)
     text.close()
 
 def add_info():
@@ -26,10 +26,11 @@ def open_info():
     mytext.delete("1.0", END)
     text = filedialog.askopenfilename(initialdir="/home/robotics", title="open file", filetypes=(("text files", "*.*"), ))
     text = open(text, "r")
+    data = text.name
+    print(data)
     stuff = text.read()
     mytext.insert(END, stuff)
-
-    
+    text.close()    
  
 app = Tk()
 
