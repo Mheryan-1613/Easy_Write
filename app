@@ -3,19 +3,19 @@ from tkinter import *
 from tkinter import filedialog
 
 
-#def save_info():
-	#my_text_info = mytext.get("1.0",END)  
-	#file = filedialog.askopenfilename(initialdir="/home/robotics", title="Submit text", filetypes=(("text files", "*.*"), ))
-	#text = open(text, "w")
-#	text.write(my_text_info)
-#	text.close()
+def save_info():
+	my_text_info = mytext.get("1.0",END)  
+	file = filedialog.askopenfilename(initialdir="/home/robotics", title="Submit text", filetypes=(("text files", "*.*"), ))
+	file = open(file, "w")
+	file.write(my_text_info)
+	file.close()
 
-def save():
-    mytext_info = mytext.get("1.0", END)
-    open_info()
-    open_text = open("data", "a")
-    mytext.insert(END, data)
-    text.close()
+#def save():
+ #   my_text_info = mytext.get("1.0",END)
+#    data = open_info()
+    #text = open(text, "w")
+    #text.write(my_text_info)
+   # text.close
 
 def add_info():
 	add_file = filedialog.asksaveasfilename(initialdir="/home/robotics", title="Create new file", filetypes=(("text file", "*.txt"), ))
@@ -26,12 +26,10 @@ def open_info():
     mytext.delete("1.0", END)
     text = filedialog.askopenfilename(initialdir="/home/robotics", title="open file", filetypes=(("text files", "*.*"), ))
     text = open(text, "r")
-    data = text.name
-    print(data)
     stuff = text.read()
     mytext.insert(END, stuff)
     text.close()    
- 
+
 app = Tk()
 
 app.geometry("520x500")
@@ -47,7 +45,7 @@ mytext = Text(app, width=60, height=20)
 mytext.place(x=15, y=130)
 #my_text.pack()
 
-button = Button(app,text="Submit",command=save,width=6,height=2)
+button = Button(app,text="Submit",command=save_info,width=6,height=2)
 button.place(x=407,y=78)
 
 open_note = Button(app,text="Open",width=2,height=2, command=open_info)
