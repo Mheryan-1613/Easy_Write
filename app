@@ -3,32 +3,38 @@ from tkinter import *
 from tkinter import filedialog
 
 
-def save_info():
-	my_text_info = mytext.get("1.0",END)  
-	
-	file = filedialog.askopenfilename(initialdir="/home/robotics", title="Submit text", filetypes=(("text files", "*.*"), ))
-	file = open(file, "w")
-	file.write(my_text_info)
-	file.close()
+#def save_info():
+	#my_text_info = mytext.get("1.0",END)  
+	#file = filedialog.askopenfilename(initialdir="/home/robotics", title="Submit text", filetypes=(("text files", "*.*"), ))
+	#text = open(text, "w")
+#	text.write(my_text_info)
+#	text.close()
 
+def save():
+    mytext_info = mytext.get("1.0", END)
+    open_info()
+    text = open(text, "a")
+    mytext.insert(END, stuff)
+    text.close()
 
-def open_info():
-	text_file = filedialog.askopenfilename(initialdir="/home/robotics", title="Open text file", filetypes=(("Text Files", "*.*"), ))
-	text_file = open(text_file, "r")
-	stuff = text_file.read()
-	mytext.insert(END, stuff)
-    mytext.delete("1.0", "END")
-	text_file.close()
-	
 def add_info():
 	add_file = filedialog.asksaveasfilename(initialdir="/home/robotics", title="Create new file", filetypes=(("text file", "*.txt"), ))
 	add_file = open(add_file, "a")
 	add_file.close()
 
+def open_info():
+    mytext.delete("1.0", END)
+    text = filedialog.askopenfilename(initialdir="/home/robotics", title="open file", filetypes=(("text files", "*.*"), ))
+    text = open(text, "r")
+    stuff = text.read()
+    mytext.insert(END, stuff)
+
+    
+ 
 app = Tk()
 
 app.geometry("520x500")
-app.title("EasyWrite(1.0)")
+app.title("EasyWrite(1.1)")
 app.resizable(False, False)
 
 
@@ -40,7 +46,7 @@ mytext = Text(app, width=60, height=20)
 mytext.place(x=15, y=130)
 #my_text.pack()
 
-button = Button(app,text="Submit",font="Fixedsys 10 ",command=save_info,width=6,height=2)
+button = Button(app,text="Submit",command=save,width=6,height=2)
 button.place(x=407,y=78)
 
 open_note = Button(app,text="Open",width=2,height=2, command=open_info)
@@ -51,5 +57,5 @@ add_note.place(x=16,y=78)
 
 print("Easy Write(1.1)")
 print("Developing mode ...")
-print("Hayko")
+
 mainloop()
